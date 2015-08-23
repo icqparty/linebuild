@@ -5,8 +5,6 @@ env:
   - APPLICATION_ENV=develope DB_NAME=linebuild
   global:
       - secure: "encryptedsecretvalue"
-services:
-  - mongodb
 
 mysql:
   adapter: mysql2
