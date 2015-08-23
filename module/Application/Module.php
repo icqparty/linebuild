@@ -30,7 +30,7 @@ class Module implements ConsoleBannerProviderInterface
 {
     public function onBootstrap(MvcEvent $e)
     {
-        $eventManager        = $e->getApplication()->getEventManager();
+        $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
     }
@@ -71,52 +71,55 @@ class Module implements ConsoleBannerProviderInterface
         return array(
             'factories' => array(
                 'ProjectModel' => function ($sm) {
-                        return new ProjectModel($sm->get('db'),'project',new Project());
-                    },
+                    return new ProjectModel($sm->get('db'), 'project', new Project());
+                },
                 'BuildModel' => function ($sm) {
-                        return new BuildModel($sm->get('db'),'build',new Build());
-                    },
+                    return new BuildModel($sm->get('db'), 'build', new Build());
+                },
                 'UserModel' => function ($sm) {
-                        return new UserModel($sm->get('db'),'user',new User());
-                    },
+                    return new UserModel($sm->get('db'), 'user', new User());
+                },
                 'RoleModel' => function ($sm) {
-                        return new RoleModel($sm->get('db'),'role',new Role());
-                    },
+                    return new RoleModel($sm->get('db'), 'role', new Role());
+                },
                 'PluginModel' => function ($sm) {
-                        return new UserModel($sm->get('db'),'user',new Plugin());
-                    },
+                    return new UserModel($sm->get('db'), 'user', new Plugin());
+                },
                 'SettingModel' => function ($sm) {
-                        return new SettingModel($sm->get('db'),'setting',new Setting());
-                    },
+                    return new SettingModel($sm->get('db'), 'setting', new Setting());
+                },
                 'ProjectPluginModel' => function ($sm) {
-                        return new ProjectPluginModel($sm->get('db'),'user',new ProjectPlugin());
-                    },
-                'VersionControl'=>'\Application\VersionControl\Client\ClientFactory',
+                    return new ProjectPluginModel($sm->get('db'), 'user', new ProjectPlugin());
+                },
+                'VersionControl' => '\Application\VersionControl\Client\ClientFactory',
                 'ProjectService' => function ($sm) {
-                        return new ProjectService();
-                    },
+                    return new ProjectService();
+                },
                 'BuildService' => function ($sm) {
-                        return new BuildService();
-                    },
+                    return new BuildService();
+                },
                 'UserService' => function ($sm) {
-                        return new UserService();
-                    },
+                    return new UserService();
+                },
             )
         );
     }
+
     public function getConsoleBanner(AdapterInterface $console)
     {
         return
-            "==------------------------------------------------------==\n".
-            "==        Welcome to LINE BUILD Console                 ==\n".
+            "==------------------------------------------------------==\n" .
+            "==        Welcome to LINE BUILD Console                 ==\n" .
             "==                 version 1.0.1                        ==\n" .
-            "==------------------------------------------------------==\n" ;
+            "==------------------------------------------------------==\n";
     }
-    public function getConsoleUsage(AdapterInterface $console){
+
+    public function getConsoleUsage(AdapterInterface $console)
+    {
         return array(
-            'run [--daemon|-d] [--verbose|-v]'=> 'Show application statistics',
-            'project list'=> 'Show list projects',
-            'project delete [--id|repository=]'=> 'Show list projects',
+            'run [--daemon|-d] [--verbose|-v]' => 'Show application statistics',
+            'project list' => 'Show list projects',
+            'project delete [--id|repository=]' => 'Show list projects',
             'install' => 'Run install processe'
         );
     }
