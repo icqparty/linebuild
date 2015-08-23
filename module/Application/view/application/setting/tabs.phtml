@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li <?php echo $this->current!=='index'?"":"class='active'" ?>><a href="<?php echo $this->url('setting')?>" >General Setting</a></li>
+    <li <?php echo $this->current!=='sc-service'?"":"class='active'" ?>><a href="<?php echo $this->url('setting/sc-service')?>" >Source Control Service</a></li>
+    <li <?php echo $this->current!=='notification'?"":"class='active'" ?>><a href="<?php echo $this->url('setting/notification')?>" >Notifications</a></li>
+</ul>

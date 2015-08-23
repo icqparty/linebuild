@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MYX Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <?php echo $this->headLink()
+        ->appendStylesheet('/assets/css/bootstrap.css')
+        ->appendStylesheet('/assets/css/animate.css')
+        ->appendStylesheet('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+        ->appendStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+    ?>
+    <!-- open sans font -->
+
+
+    <?php echo $this->headScript()
+        ->appendFile('http://html5shiv.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'IE'))
+        ->appendFile('/assets/js/jquery.min.js')
+        ->appendFile('//maxcdn.bootstrapcdn.com/bootlint/0.5.0/bootlint.min.js'); ?>
+</head>
+<body class="onepage">
+<div class="navbar navbar-default navbar-fixed-top">
+    <a class="navbar-brand" href="/"><b>LINE</b>BUILD</a>
+</div>
+<br><br>
+<?php echo $this->layout()->content;?>
+
+
+<?php $this->inlineScript()
+    ->prependFile('/assets/js/theme.js')
+    ->prependFile('/assets/js/bootstrap.js');
+
+
+?>
+<?php echo $this->inlineScript();?>
+
+
+</body>
+</html>

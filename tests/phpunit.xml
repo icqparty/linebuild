@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./Bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="ApplicationTest">
+            <directory suffix=".php">./ApplicationTest</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../module/*/src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+
+        <log type="coverage-clover" target="build/logs/cover.xml"/>
+
+    </logging>
+</phpunit>

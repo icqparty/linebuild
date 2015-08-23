@@ -1,0 +1,48 @@
+<div class="row wrapper animated fadeInDown" style="background-color: #f3f6fb;padding-top: 10px">
+    <div class="col-lg-12 m-t-md">
+        <div class="row form-group">
+            <label class="col-sm-2 control-label">Owner</label>
+            <div class="col-sm-10">
+                <p ><?php echo $this->project->owner?></p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-2 control-label">Secret Token</label>
+            <div class="col-sm-10">
+                <p >
+                    cc16e4cd-4a19-4931-bba1-ca72cbb55c01
+                </p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-2 control-label">Origin URL</label>
+            <div class="col-sm-10">
+                <p >
+                    <a href="https://github.com/icqparty/Clodo-API-PHP-class" target="_blank" class="ng-binding">
+                        <i class="fa fa-external-link"></i>
+                        https://github.com/icqparty/Clodo-API-PHP-class
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-2 control-label">Public key URL</label>
+            <div class="col-sm-10">
+                <p >
+                    <a href="<?php echo $this->url('project/key',array('id'=>$this->project->id),array('force_canonical' => true));?>" target="_blank" class="ng-binding">
+                        <i class="fa fa-external-link"></i>
+                        <?php echo $this->url('project/key',array('id'=>$this->project->id),array('force_canonical' => true));?>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-2 control-label">Rebuild URL</label>
+            <div class="col-sm-10">
+                <p >
+                    https://ci.vexor.io/api/projects/cc16e4cd-4a19-4931-bba1-ca72cbb55c01/rebuild
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

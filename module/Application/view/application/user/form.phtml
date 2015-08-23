@@ -1,0 +1,51 @@
+<div class="row">
+
+    <div class="col-md-6">
+        <?php
+        $this->form->prepare();
+        var_dump($this->form->getMessages());
+        ?>
+        <?php echo $this->form()->openTag($this->form); ?>
+        <?php $user_fieldset = $this->form->get('user_fieldset'); ?>
+        <?php echo $this->formHidden($user_fieldset->get('id')); ?>
+        <div class="form-group">
+            <?php echo $this->formLabel($user_fieldset->get('username')); ?>
+            <?php echo $this->formText($user_fieldset->get('username')); ?>
+            <?php echo $this->formElementErrors($user_fieldset->get('username'), array('class' => 'error_message')); ?>
+
+        </div>
+
+        <div class="form-group">
+            <?php echo $this->formLabel($user_fieldset->get('email')); ?>
+            <?php echo $this->formText($user_fieldset->get('email')); ?>
+            <?php echo $this->formElementErrors($user_fieldset->get('email'), array('class' => 'error_message')); ?>
+
+        </div>
+
+        <div class="form-group">
+            <?php echo $this->formLabel($user_fieldset->get('password')); ?>
+            <?php echo $this->formPassword($user_fieldset->get('password')); ?>
+            <?php echo $this->formElementErrors($user_fieldset->get('password'), array('class' => 'error_message')); ?>
+
+        </div>
+
+        <div class="form-group">
+            <?php echo $this->formLabel($user_fieldset->get('role_id')); ?>
+            <?php echo $this->formSelect($user_fieldset->get('role_id')); ?>
+            <?php echo $this->formElementErrors($user_fieldset->get('role_id'), array('class' => 'error_message')); ?>
+        </div>
+        <div class="checkbox">
+            <label>
+                <?php echo $this->formCheckbox($user_fieldset->get('status')); ?>
+                <b><?php echo $user_fieldset->get('status')->getLabel(); ?></b>
+            </label>
+            <?php echo $this->formElementErrors($user_fieldset->get('status'), array('class' => 'error_message')); ?>
+        </div>
+
+        <a href="<?php echo $this->url('user'); ?>" class="btn btn-default">Cancel</a>
+        <?php echo $this->formSubmit($this->form->get('submit')); ?>
+
+
+        <?php echo $this->form()->closeTag(); ?>
+    </div>
+</div>

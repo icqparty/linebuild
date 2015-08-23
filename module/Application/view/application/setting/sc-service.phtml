@@ -1,0 +1,143 @@
+<div class="row animated fadeInDown">
+    <div class="col-md-12">
+        <?php echo $this->partial('application/setting/tabs', array('current' => "sc-service")); ?>
+    </div>
+</div>
+<br>
+<div class="row animated fadeInDown">
+    <div class="col-md-12">
+        <?php if (count($this->form->getMessages()) > 0): ?>
+            <div class="alert alert-danger">sd
+                <?php echo $this->formElementErrors($this->form->get('client_id'), array('class' => 'error_message')); ?>
+                <?php echo $this->formElementErrors($this->form->get('client_secret'), array('class' => 'error_message')); ?>
+            </div>
+        <?php endif ?>
+        <div class="panel">
+            <div class="panel-heading">
+                <i class="fa fa-bitbucket fa-2x pull-left"></i> Bitbucked
+                <a href="#" class="btn-edit-sc btn btn-success btn-xs pull-right" id="bitbucked"><i
+                        class="fa fa-pencil-square-o"></i></a>
+            </div>
+            <div
+                class="panel-body <?php echo $this->current_form !== 'bitbucked' ? "hidden" : ""; ?> body-form animated fadeIn"
+                item="bitbucked">
+                <?php if ($this->current_form !== 'bitbucked'): ?>
+                    <?php $this->form->get('client_id')->setValue($this->version_control->bitbucked->client_id); ?>
+                    <?php $this->form->get('client_secret')->setValue($this->version_control->bitbucked->client_secret); ?>
+                <?php endif ?>
+                <?php echo $this->form()->openTag($this->form); ?>
+                <div class="form-inline">
+                    <?php $this->form->get('name')->setValue('bitbucked'); ?>
+                    <?php echo $this->formHidden($this->form->get('name')) ?>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_id')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_secret')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formSubmit($this->form->get('submit')); ?>
+                    </div>
+                </div>
+                <?php echo $this->form()->closeTag(); ?>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <i class="fa fa-github fa-2x pull-left"></i> Github
+                <a href="#" class="btn-edit-sc btn btn-success btn-xs pull-right" id="github"><i
+                        class="fa fa-pencil-square-o"></i></a>
+            </div>
+            <div
+                class="panel-body <?php echo $this->current_form !== 'github' ? "hidden" : ""; ?> animated fadeIn body-form"
+                item="github">
+                <?php if ($this->current_form !== 'github'): ?>
+                    <?php $this->form->get('client_id')->setValue($this->version_control->github->client_id); ?>
+                    <?php $this->form->get('client_secret')->setValue($this->version_control->github->client_secret); ?>
+                <?php endif ?>
+                <?php echo $this->form()->openTag($this->form); ?>
+                <div class="form-inline">
+                    <?php $this->form->get('name')->setValue('github'); ?>
+                    <?php echo $this->formHidden($this->form->get('name')) ?>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_id')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_secret')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formSubmit($this->form->get('submit')); ?>
+                    </div>
+                </div>
+                <?php echo $this->form()->closeTag(); ?>
+
+            </div>
+        </div>
+        <div class="panel ">
+            <div class="panel-heading">
+                <img src="/assets/image/gitlab.svg" width="25" height="25" style="margin-right: 5px"
+                     class="pull-left"> Gitlab
+                <a href="#" class="btn-edit-sc btn btn-success btn-xs pull-right" id="gitlab"><i
+                        class="fa fa-pencil-square-o"></i></a>
+            </div>
+            <div
+                class="panel-body <?php echo $this->current_form !== 'gitlab' ? "hidden" : ""; ?> animated fadeIn body-form"
+                item="gitlab">
+                <?php if ($this->current_form !== 'gitlab'): ?>
+                    <?php $this->form->get('client_id')->setValue($this->version_control->gitlab->client_id); ?>
+                    <?php $this->form->get('client_secret')->setValue($this->version_control->gitlab->client_secret); ?>
+                <?php endif ?>
+                <?php echo $this->form()->openTag($this->form); ?>
+                <div class="form-inline">
+
+                    <?php $this->form->get('name')->setValue('gitlab'); ?>
+                    <?php echo $this->formHidden($this->form->get('name')) ?>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_id')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_secret')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formSubmit($this->form->get('submit')); ?>
+                    </div>
+                </div>
+                <?php echo $this->form()->closeTag(); ?>
+
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <i class="fa fa-google-plus-square  fa-2x pull-left"></i> Googlecode
+                <a href="#" class="btn-edit-sc btn btn-success btn-xs pull-right" id="googlecode"><i
+                        class="fa fa-pencil-square-o"></i></a>
+            </div>
+            <div
+                class="panel-body <?php echo $this->current_form !== 'googlecode' ? "hidden" : ""; ?> animated fadeIn body-form"
+                item="googlecode">
+                <?php if ($this->current_form !== 'googlecode'): ?>
+                    <?php $this->form->get('client_id')->setValue($this->version_control->googlecode->client_id); ?>
+                    <?php $this->form->get('client_secret')->setValue($this->version_control->googlecode->client_secret); ?>
+                <?php endif ?>
+                <?php echo $this->form()->openTag($this->form); ?>
+                <div class="form-inline">
+                    <?php $this->form->get('name')->setValue('googlecode'); ?>
+                    <?php echo $this->formHidden($this->form->get('name')) ?>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_id')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formText($this->form->get('client_secret')); ?>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $this->formSubmit($this->form->get('submit')); ?>
+                    </div>
+                </div>
+                <?php echo $this->form()->closeTag(); ?>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

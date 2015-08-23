@@ -1,0 +1,61 @@
+<div class="row animated fadeInDown">
+    <div class="col-lg-12">
+        <table class="table table-hover table-responsive no-padding animation-direction">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th></th>
+                <th>Branch</th>
+                <th>Author</th>
+                <th class="col-lg-5">Message</th>
+                <th>Duraction</th>
+                <th>Created <div class="btn-group pull-right">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span class="caret"></span> <?php echo $this->branch;?>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="<?php echo $this->url("project/view",array('id'=>$this->project->id,'page'=>$this->page))?>">all branches</a></li>
+                                <li><a href="<?php echo $this->url("project/view",array('id'=>$this->project->id,'page'=>$this->page),array('query'=>array('branch'=>'master')))?>">master</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody >
+            <!-- ngRepeat: build in builds | orderBy:'number':true -->
+            <?php if($this->build_result):?>
+                <?php foreach($this->build_result as $build):?>
+                <tr onclick="go('<?php echo $this->url('build/view',array('id'=>$build->id))?>');">
+                    <td>
+                       #<?php echo $build->id?>
+                    </td>
+                    <td>
+                        <?php echo $this->status($build->status,null,array('id'=>"built_status_label"))?>
+                    </td>
+                    <td class="no-wrap">
+                        <?php echo $build->branch ?>
+                    </td>
+                    <td class="no-wrap">
+                        <?php echo $build->author ?>
+                    </td>
+                    <td class="no-wrap">
+                        <?php echo $build->message ?>
+                    </td>
+                    <td class="no-wrap">
+                        <?php echo $this->duraction($build->duration);?>
+
+                    </td>
+                    <td>
+                        <span class="text-muted ng-binding">
+                          3 days ago
+                        </span>
+                    </td>
+                </tr>
+                <?php endforeach;?>
+            <?php endif;?>
+            </tbody>
+        </table>
+    </div>
+</div>

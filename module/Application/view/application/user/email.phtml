@@ -1,0 +1,38 @@
+<br><br>
+<div class="col-md-4 col-lg-offset-4">
+
+    <div class="panel">
+        <div class="panel-body">
+            <div class=" text-center">
+                <p>Clean and elegant responsive template suitable for any back-end
+                    application. Created using latest Bootstrap Framework</p>
+            </div>
+            <?php
+            $this->form->prepare();
+            ?>
+            <?php echo $this->form()->openTag($this->form); ?>
+            <div style="border: 1px solid #c0c0c0">
+                <?php //echo $this->formLabel($this->form->get('username')); ?>
+                <?php echo $this->formText($this->form->get('username')); ?>
+            </div>
+            <?php echo $this->formElementErrors($this->form->get('username'), array('class' => 'error_message')); ?>
+            <br>
+            <p>
+            <?php echo $this->formSubmit($this->form->get('submit')); ?>
+            </p>
+
+            <p class="text-center">
+                <a href="<?php echo $this->url('user/login');?>">
+                    <strong>SingIn account</strong>
+                </a>
+            </p>
+
+            <?php echo $this->form()->closeTag(); ?>
+
+
+        </div>
+    </div>
+    <p class="text-center">
+        <small>&copy; linebuild.ru 2014, Admin Dashboard Base on Bootstrap Framework</small>
+    </p>
+</div>

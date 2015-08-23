@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="ru">
+<head>
+    <?php echo $this->headMeta()->appendName('keywords', 'framework, PHP, productivity');?>
+    <?php echo $this->headMeta()
+        ->appendHttpEquiv('Content-Type','text/html; charset=UTF-8')
+        ->appendHttpEquiv('Content-Language', 'en-US');?>
+    <?php echo $this->headTitle('Zend Framework');?>
+
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+
+    <?php echo $this->headLink()
+        ->appendStylesheet('/assets/css/bootstrap.css')
+        ->appendStylesheet('/assets/css/animate.css')
+        ->appendStylesheet('/assets/css/theme.css')
+        ->appendStylesheet('/assets/js/wizard/wizard.css')
+        ->appendStylesheet('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+        ->appendStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+    ?>
+    <!-- open sans font -->
+
+
+    <?php echo $this->headScript()
+        ->appendFile('http://html5shiv.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'IE'))
+        ->appendFile('http://code.jquery.com/jquery-2.1.1.js')
+        ->appendFile('http://code.jquery.com/jquery-migrate-1.2.1.min.js'); ?>
+</head>
+<body >
+
+<!-- navbar -->
+<?php echo $this->partial('layout/header'); ?>
+<!-- end navbar -->
+
+<!-- sidebar -->
+<?php echo $this->partial('layout/sidebar'); ?>
+
+<!-- end sidebar -->
+
+
+<!-- main container -->
+<div class="content">
+    <div id="pad-wrapper">
+
+        <div class="row animated fadeInDown">
+            <div class="col-lg-12">
+                <?php if ($this->layout()->header): ?>
+                    <div class="pull-left">
+                        <h2><?php echo $this->layout()->header ?></h2>
+                        <small><?php echo $this->layout()->desc_header ?></small>
+                    </div>
+                <?php endif ?>
+                <div class="pull-right" style="padding-top: 20px">
+                    <?php if ($this->layout()->action): ?>
+                        <?php echo $this->partialLoop('application/action', $this->layout()->action); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <?php echo $this->layout()->content; ?>
+
+
+        <?php //echo $this->partial('layout/footer'); ?>
+    </div>
+    <!-- /pad-wrapper -->
+    <?php echo $this->partial("layout/badges.phtml");?>
+</div>
+
+<!-- content -->
+<!-- /main container -->
+
+
+<?php $this->inlineScript()
+    ->prependFile('/assets/js/application.js')
+    ->prependFile('/assets/js/bootstrap.js');
+?>
+<?php echo $this->inlineScript();?>
+
+</body>
+</html>

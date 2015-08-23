@@ -1,0 +1,103 @@
+.wizard .wizard-inner {
+    overflow: hidden;
+    *zoom: 1;
+}
+
+.wizard .wizard-inner:before,
+.wizard .wizard-inner:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.wizard .wizard-inner:after {
+    clear: both;
+}
+
+.wizard .wizard-inner ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none outside none;
+
+}
+
+.wizard .wizard-inner ul li {
+    float: left;
+    padding: 10px;
+    margin-right: 10PX;
+
+    cursor: default;
+
+}
+
+
+
+.wizard .wizard-inner ul li.complete {
+    color: #4f4f4f;
+    background: #b4f4a8;
+}
+
+.wizard .wizard-inner ul li.complete:hover {
+    cursor: pointer;
+    background: #b6ffa8;
+}
+
+
+
+
+.wizard .wizard-inner ul li.active {
+    font-weight: bold;
+    color: #595959;
+    background: #f1e548;
+}
+
+
+
+.wizard .wizard-inner ul li .badge {
+    margin-right: 8px;
+}
+
+.wizard .wizard-inner ul li:first-child {
+    padding-left: 20px;
+}
+
+.wizard .wizard-inner .actions {
+
+    right: 0;
+
+    float: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    line-height: 46px;
+
+}
+
+.wizard .wizard-inner .actions a {
+    margin-right: 8px;
+    line-height: 45px;
+}
+
+.wizard .wizard-inner .actions .btn-prev i {
+    margin-right: 5px;
+}
+
+.wizard .wizard-inner .actions .btn-next i {
+    margin-left: 5px;
+}
+
+.wizard .step-content {
+    clear: both;
+}
+
+.wizard .step-content .step-pane {
+    display: none;
+}
+
+.wizard .step-content .active {
+    display: block;
+}
+
+.wizard .step-content .active .btn-group .active {
+    display: inline-block;
+}

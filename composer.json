@@ -1,0 +1,27 @@
+{
+    "name": "icqparty/linebuild",
+    "type":"project",
+    "homepage": "http://linebuild.ru",
+    "authors": [
+        {
+            "name": "Asoskov Alexander",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "description": "Open Source Continues Integration system for project on PHP",
+
+    "keywords": [
+        "linebuild","open source","testing","phpunit",
+        "deploy","production","build","developer"
+    ],
+
+    "require": {
+        "php":">=5.3.3",
+        "zendframework/zendframework": "2.3.*"
+    },
+    "require-dev": {
+        "phpunit/PHPUnit": "4.3.*",
+        "satooshi/php-coveralls": "dev-master"
+    }
+}

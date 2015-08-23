@@ -1,0 +1,37 @@
+language: php
+php:
+  - 5.5
+env:
+  - APPLICATION_ENV=develope DB_NAME=linebuild
+  global:
+      - secure: "encryptedsecretvalue"
+services:
+  - mongodb
+
+mysql:
+  adapter: mysql2
+  database: $DB_NAME
+  username: travis
+  encoding: utf8
+
+
+cache:
+  directories:
+    - vendor
+before_cache:
+  - composer self-update
+  - composer install
+
+
+
+before_script:
+  - mysql -e "create database IF NOT EXISTS $DB_NAME;"  -uroot
+  - mysql $DB_NAME < $DB_NAME.sql -uroot
+  - mysql -e "USE $DB_NAME; SHOW TABLES;" -uroot
+  
+script: phpunit  --coverage-text
+  
+notifications:
+  on_success: never
+  on_failure: always
+  hipchat: A7dirgkcptgJpbR2Zi4JL8Rd6QUjb8Q7XUvvQHEu@1734095

@@ -1,0 +1,38 @@
+<div class="row animated fadeInDown ">
+    <div class="col-lg-8">
+
+                <table class="table responsive" data-sortable="" data-sortable-initialized="true">
+                    <thead>
+                    <tr>
+                        <th>Email Address</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php if ($this->user_result): ?>
+                        <?php foreach ($this->user_result as $user): ?>
+                            <tr>
+                                <td><?php echo $user->email; ?></td>
+                                <td><?php echo $user->username; ?></td>
+                                <td><?php echo $user->role_id; ?></td>
+                                <td class="text-right">
+                                    <a class="btn btn-sm btn-info"
+                                       href="<?php echo $this->url('user/edit', array('id' => $user->id)) ?>"><i
+                                            class="fa fa-pencil-square-o"></i></a>
+                                    <a class="btn btn-sm btn-danger"
+                                       href="<?php echo $this->url('user/delete', array('id' => $user->id)) ?>"><i
+                                            class="fa fa-remove"></i></a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php endif; ?>
+                    </tbody>
+                </table>
+
+    </div>
+    <div class="col-md-4">
+        dsssss
+    </div>
+</div>

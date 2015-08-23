@@ -1,0 +1,7 @@
+
+<a class="btn btn-default btn-sm"
+   href="<?php echo isset($this->href)?$this->href:$this->url($this->route,array('id'=>$this->id))?>"
+   target="<?php echo $this->target?>">
+    <i class="<?php echo $this->icon?>"></i>
+    <?php echo $this->title?>
+</a>

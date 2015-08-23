@@ -1,0 +1,98 @@
+<?php $this->inlineScript()
+        ->appendFile('/assets/js/wizard/wizard.js');?>
+<div class="row animated fadeInDown">
+    <div class="col-lg-12">
+<div id="myWizard" class="wizard">
+<div class="row ">
+    <div class="col-lg-12">
+        <div class="wizard-inner">
+            <ul class="steps">
+                <li data-target="#step1" class="active">1. sdfsdfsdfsd
+                    sdf sd f <i class="fa fa-arrow-right"></i>
+
+                </li>
+                <li data-target="#step2">2. <i class="fa fa-arrow-right"></i></li>
+                <li data-target="#step3">3. <i class="fa fa-arrow-right"></i></li>
+                <li data-target="#step4">4. </li>
+            </ul>
+            <div class="actions">
+                <button type="button" class="btn btn-default  btn-prev"><i class="icon-arrow-left"></i>Prev
+                </button>
+                <button type="button" class="btn btn-success   btn-next" data-last="Finish">Next<i
+                        class="icon-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<?php
+// $this->form->prepare();
+?>
+<?php echo $this->form()->openTag($this->form); ?>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="step-content">
+            <div class="step-pane active" id="step1">
+                <?php $project_fieldset = $this->form->get('project_fieldset'); ?>
+                <div class="form-group">
+                    <?php echo $this->formLabel($project_fieldset->get('type')); ?>
+                    <?php echo $this->formSelect($project_fieldset->get('type')); ?>
+                    <?php echo $this->formElementErrors($project_fieldset->get('type'), array('class' => 'error_message')); ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($project_fieldset->get('repository')); ?>
+                    <?php echo $this->formText($project_fieldset->get('repository')); ?>
+                    <?php echo $this->formElementErrors($project_fieldset->get('repository'), array('class' => 'error_message')); ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($project_fieldset->get('header')); ?>
+                    <?php echo $this->formText($project_fieldset->get('header')); ?>
+                    <?php echo $this->formElementErrors($project_fieldset->get('header'), array('class' => 'error_message')); ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($project_fieldset->get('config')); ?>
+                    <?php echo $this->formTextarea($project_fieldset->get('config')); ?>
+                    <?php echo $this->formElementErrors($project_fieldset->get('config'), array('class' => 'error_message')); ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($project_fieldset->get('branch')); ?>
+                    <?php echo $this->formText($project_fieldset->get('branch')); ?>
+                    <?php echo $this->formElementErrors($project_fieldset->get('branch'), array('class' => 'error_message')); ?>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <?php echo $this->formCheckbox($project_fieldset->get('open')); ?>
+                        <b><?php echo $project_fieldset->get('open')->getLabel(); ?></b>
+                    </label>
+                </div>
+            </div>
+            <div class="step-pane" id="step2">
+                2
+            </div>
+            <div class="step-pane" id="step3">
+3
+            </div>
+            <div class="step-pane" id="step4">
+
+
+                <div class="alert alert-success fade in" style="margin: 100px 0;">
+                    <i class="fa fa-check-circle fa-fw fa-lg"></i>
+                    <strong>Congratulation!</strong> You have successfully finished our nice wizard.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->form()->closeTag(); ?>
+    </div>
+        </div>
+
+
+
+
+
+
+
+
+
+

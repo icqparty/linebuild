@@ -1,0 +1,56 @@
+<div class="row  animated fadeInDown" style="background-color: #f3f6fb; padding-top: 15px">
+    <div class="col-md-6">
+        <div class="row form-group">
+            <label class="col-sm-3">Status</label>
+            <div class="col-sm-9">
+                <?php echo $this->status($this->build->status,null,array('id'=>"built_status_label"))?>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3">Author</label>
+            <div class="col-sm-9">
+                <p >
+                    <?php echo $this->gravatar('icqparty@gmail.com',null,array('class'=>"img-circle"))->setImgSize(25);?>
+                    <?php echo $this->build->author?>
+                </p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3">Message</label>
+            <div class="col-sm-9">
+                <p>
+                    <?php echo $this->build->message?>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row form-group">
+            <label class="col-sm-3">Commit</label>
+            <div class="col-sm-9">
+                <p>
+                    <a href="<?php ?>">
+                        <i class="fa fa-external-link">
+                            <?php echo $this->build->commit_id?>
+                        </i>
+                    </a>
+                    to <?php echo $this->build->branch?>
+                </p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3 " style="white-space: nowrap;">Finished date</label>
+            <div class="col-sm-9">
+                <p ><?php echo $this->build->finish_date?></p>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3">Duration</label>
+            <div class="col-sm-9">
+                <p >
+                    <?php echo $this->duraction($this->build->duration);?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

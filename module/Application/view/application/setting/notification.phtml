@@ -1,0 +1,49 @@
+<div class="row animated fadeInDown">
+    <div class="col-md-12">
+        <?php echo $this->partial('application/setting/tabs', array('current' => "notification")); ?>
+    </div>
+</div>
+<br>
+<div class="row animated fadeInDown">
+    <div class="col-md-12">
+        <?php
+        $this->form->prepare();
+        ?>
+        <?php echo $this->form()->openTag($this->form); ?>
+
+        <div class="form-group">
+            <?php echo $this->formLabel($this->form->get('smtp_host')); ?>
+            <?php echo $this->formText($this->form->get('smtp_host')); ?>
+            <?php echo $this->formElementErrors($this->form->get('smtp_host'), array('class' => 'error_message')); ?>
+        </div>
+        <div class="form-group">
+            <?php echo $this->formLabel($this->form->get('smtp_port')); ?>
+            <?php echo $this->formText($this->form->get('smtp_port')); ?>
+            <?php echo $this->formElementErrors($this->form->get('smtp_port'), array('class' => 'error_message')); ?>
+        </div>
+        <div class="form-group">
+            <?php echo $this->formLabel($this->form->get('smtp_username')); ?>
+            <?php echo $this->formText($this->form->get('smtp_username')); ?>
+            <?php echo $this->formElementErrors($this->form->get('smtp_username'), array('class' => 'error_message')); ?>
+        </div>
+        <div class="form-group">
+            <?php echo $this->formLabel($this->form->get('smtp_password')); ?>
+            <?php echo $this->formPassword($this->form->get('smtp_password')); ?>
+            <?php echo $this->formElementErrors($this->form->get('smtp_password'), array('class' => 'error_message')); ?>
+        </div>
+        <div class="form-group">
+            <?php echo $this->formLabel($this->form->get('smtp_email')); ?>
+            <?php echo $this->formText($this->form->get('smtp_email')); ?>
+            <?php echo $this->formElementErrors($this->form->get('smtp_email'), array('class' => 'error_message')); ?>
+        </div>
+        <div class="checkbox">
+            <label>
+                <?php echo $this->formCheckbox($this->form->get('smtp_crypt')); ?>
+                <b><?php echo $this->form->get('smtp_crypt')->getLabel(); ?></b>
+            </label>
+        </div>
+        <?php echo $this->formSubmit($this->form->get('submit')); ?>
+        <?php echo $this->form()->closeTag(); ?>
+    </div>
+
+</div>
